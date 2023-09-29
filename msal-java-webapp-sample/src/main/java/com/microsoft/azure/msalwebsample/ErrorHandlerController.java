@@ -6,7 +6,7 @@ package com.microsoft.azure.msalwebsample;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.boot.web.servlet.error.ErrorController;
+//import org.springframework.boot.web.servlet.error.ErrorController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,19 +15,19 @@ import javax.servlet.http.HttpServletResponse;
  * Endpoint where errors will be redirected
  */
 @Controller
-public class ErrorHandlerController implements ErrorController {
+public class ErrorHandlerController {
 
     private static final String PATH = "/error";
 
-    @RequestMapping(value = PATH)
+//    @RequestMapping(value = PATH)
     public ModelAndView returnErrorPage(HttpServletRequest req, HttpServletResponse response) {
         ModelAndView mav = new ModelAndView("error");
         mav.addObject("error", req.getAttribute("error"));
         return  mav;
     }
 
-    @Override
-    public String getErrorPath() {
-        return PATH;
-    }
+//    @Override
+//    public String getErrorPath() {
+//        return PATH;
+//    }
 }
